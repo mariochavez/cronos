@@ -1,0 +1,19 @@
+es:
+  activerecord:
+    models:
+      project: 'Projecto'
+      task: 'Tarea'
+      time_track: 'Actividad'
+    attributes:
+      project:
+        name: 'Nombre'
+      task:
+        name: 'Nombre'
+      time_track:
+        date: 'Fecha'
+        task: 'Tarea'
+        task_id: 'Tarea'
+        time: 'Tiempo'
+        time_in_minutes: 'Tiempo'
+
+

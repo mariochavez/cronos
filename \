@@ -1,0 +1,36 @@
+class TimeTracksController < ApplicationController
+  include ProjectFormBuilder
+
+  def create
+    @time_track = TimeTrack.new date: parse_date, time_in_minutes: parse_time,
+      task: find_task
+
+    project_id = params[:project_id].to_i
+    if @time_track.save
+    else
+    end
+    binding.pry
+  end
+
+  private
+  def find_task
+    Task.find_by id: params[:time_track][:task].to_i
+  end
+
+  def parse_time
+    time = params[:time_track][:time]
+    time_number = time.to_i
+
+    return time_number if time.downcase.end_with?('m')
+
+    time_number * 60
+  end
+
+  def parse_date
+    begin
+      Time.zone.parse "#{params[:time_track]['date(1i)']}-#{params[:time_track]['date(2i)']}-#{params[:time_track]['date(3i)']}"
+    rescue
+      nil
+    end
+  end
+end

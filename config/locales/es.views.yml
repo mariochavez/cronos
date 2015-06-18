@@ -1,0 +1,15 @@
+es:
+  projects:
+    time_track_form:
+      track_time: 'Registrar tiempo'
+      form-error: 'Por favor revise los datos de la forma'
+
+    tracks_list:
+      table:
+        task: 'Tarea'
+        date: 'Fecha'
+        time: 'Tiempo'
+
+  time_tracks:
+    time_track:
+      time_in_hours: '%{hours} hrs'

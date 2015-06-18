@@ -1,0 +1,5 @@
+<tr>
+  <td><%= time_track.task.name %></td>
+  <td><%= l(time_track.date, format: :no_time) %></td>
+  <td><%= t('.time_in_hours', hours: time_track.time) %></td>
+</tr>

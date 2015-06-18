@@ -1,0 +1,33 @@
+<h3><%= t('.track_time') %></h3>
+<%= form_for track, html: { class: 'pure-form pure-form-stacked' } do |form| %>
+  <% if track.errors.any? %>
+    <div class='error'>
+      <p><%= t('.form-error') %></p>
+      <ul>
+        <% track.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='pure-g track-entry'>
+    <%= hidden_field_tag :project_id, project.id %>
+
+    <div class='pure-u-1-4 tasks'>
+      <%= form.label :task %>
+      <%= form.collection_select :task, tasks, :id, :name, prompt: true %>
+    </div>
+    <div class='pure-u-1-3 date'>
+      <%= form.label :date %>
+      <%= form.date_select :date %>
+    </div>
+    <div class='pure-u-1-6 time'>
+      <%= form.label :time %>
+      <%= form.text_field :time %>
+    </div>
+    <div class='pure-u-1-4 action'>
+      <%= form.submit class: 'pure-button pure-button-primary' %>
+    </div>
+  </div>
+<% end %>

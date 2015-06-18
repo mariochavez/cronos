@@ -1,0 +1,74 @@
+$gray-color: #f5f5f5;
+
+.form {
+  padding: 1em 2em;
+  margin-bottom: 1.5em;
+  background-color: $gray-color;
+
+  h3 {
+    text-transform: uppercase;
+  }
+
+  .error {
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    background-color: #fb7576;
+    color: white;
+    font-weight: lighter;
+  }
+}
+
+.track-entry {
+  width: 100%;
+
+  .tasks {
+    select {
+      width: 100%;
+    }
+  }
+
+  .date {
+    text-align: center;
+
+    select {
+      margin-top: 0;
+      display: inline-block;
+    }
+  }
+
+  .time {
+    input {
+      width: 150px;
+    }
+  }
+
+  .action {
+    text-align: center;
+
+    .pure-button {
+      margin-top: 18px;
+      padding: 1em 2em;
+    }
+  }
+
+  label {
+    text-align: center;
+  }
+}
+
+.time-tracks {
+  margin-top: 10px;
+
+  table {
+    width: 100%;
+  }
+
+  th {
+    background-color: $gray-color;
+  }
+
+  td {
+    padding: 1em;
+  }
+}
