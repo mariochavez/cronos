@@ -31,13 +31,15 @@ http://localhost:3000
     $ rails s
 
 ## Branches
-Master branch have a plain Ruby on Rails app
-Turbolinks branch have the same app but now using [Turbolinks
+
+* Master branch have a plain Ruby on Rails app
+
+* Turbolinks branch have the same app but now using [Turbolinks
 3.0](https://github.com/rails/turbolinks)
 
 ## "Aprendiendo Ruby on Rails 4.2" eBook
-Currently I'm writting am eBook in spanish called _Aprendiendo Ruby on Rails
-4.2_ if you like this sample app and companion post, please share the work
+Currently I'm writting am eBook in spanish called [_Aprendiendo Ruby on Rails
+4.2_](http://www.railsenespanol.co/) if you like this sample app and companion post, please share the work
 about this book.
 
 <img
