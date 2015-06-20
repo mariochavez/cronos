@@ -1,6 +1,14 @@
 require 'test_helper'
 
 feature 'Add Time Track' do
+  before do
+    Capybara.current_driver = Capybara.javascript_driver
+  end
+
+  after do
+    Capybara.current_driver = Capybara.default_driver
+  end
+
   scenario 'sanity' do
     visit root_path
 
@@ -11,7 +19,7 @@ feature 'Add Time Track' do
     visit root_path
     click_link 'Blog project'
 
-    page.must_have_content 'Registrar tiempo'
+    page.must_have_selector '#new_time_track'
   end
 
   scenario 'display error when submitting empty form' do

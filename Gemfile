@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :test do
   gem 'minitest-rails-capybara'
+  gem 'selenium-webdriver'
 end
 
 group :development, :test do
