@@ -1,7 +1,9 @@
 <h1><%= "#{Project.model_name.human}: #{@project_form.project.name}" %></h1>
 
-<section class='form'>
+<section id='track-form'>
   <%= render partial: 'projects/time_track_form', locals: { track: @project_form.track, tasks: @project_form.tasks, project: @project_form.project } %>
 </section>
 
-<%= render partial: 'projects/tracks_list', locals: { tracks: @project_form.tracks } %>
+<section id='time-tracks'>
+  <%= render partial: 'projects/tracks_list', locals: { tracks: @project_form.tracks } %>
+</section>

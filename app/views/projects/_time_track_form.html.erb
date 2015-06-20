@@ -1,5 +1,5 @@
 <h3><%= t('.track_time') %></h3>
-<%= form_for track, html: { class: 'pure-form pure-form-stacked' } do |form| %>
+<%= form_for track, remote: true, html: { class: 'pure-form pure-form-stacked' } do |form| %>
   <% if track.errors.any? %>
     <div class='error'>
       <p><%= t('.form-error') %></p>
