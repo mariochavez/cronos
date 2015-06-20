@@ -30,6 +30,11 @@ http://localhost:3000
 
     $ rails s
 
+## Branches
+Master branch have a plain Ruby on Rails app
+Turbolinks branch have the same app but now using [Turbolinks
+3.0](https://github.com/rails/turbolinks)
+
 ## "Aprendiendo Ruby on Rails 4.2" eBook
 Currently I'm writting am eBook in spanish called _Aprendiendo Ruby on Rails
 4.2_ if you like this sample app and companion post, please share the work
@@ -39,4 +44,4 @@ about this book.
 src='http://cdn1.railsenespanol.co.global.prod.fastly.net/railsenespanol/assets/portada-7fdb2863afe942e8ab013cf5f9825ba9.jpg' />
 
 ## License
-
+MIT License - see the LICENSE.txt file in the source distribution.
