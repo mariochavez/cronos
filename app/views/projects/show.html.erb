@@ -1,9 +1,7 @@
 <h1><%= "#{Project.model_name.human}: #{@project_form.project.name}" %></h1>
 
-<section id='track-form'>
-  <%= render partial: 'projects/time_track_form', locals: { track: @project_form.track, tasks: @project_form.tasks, project: @project_form.project } %>
-</section>
-
 <section id='time-tracks'>
-  <%= render partial: 'projects/tracks_list', locals: { tracks: @project_form.tracks } %>
+  <%= react_component 'TimeTrack',
+    { form: @project_form },
+    { prerender: true } %>
 </section>

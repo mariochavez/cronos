@@ -19,6 +19,14 @@ class TimeTrack < ActiveRecord::Base
     self.time_in_minutes = value * 60
   end
 
+  def as_json(options = {})
+    {
+      task_name: self.task.try(:name),
+      date: date.present? ? I18n.l(self.date, format: :no_time) : '',
+      time: time.present? ? I18n.t('time_tracks.time_track.time_in_hours', hours: self.time) : ''
+    }
+  end
+
   scope :project_tracks, ->(project) {
     order(date: :desc).includes(task: :project)
       .where('tasks.project_id' => project.id)

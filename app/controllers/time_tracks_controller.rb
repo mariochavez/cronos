@@ -6,12 +6,18 @@ class TimeTracksController < ApplicationController
       task: find_task
 
     project = find_project
-    return redirect_to project_path(project), change: ['time-tracks', 'track-form'] if time_track.save
+    if time_track.save
+      return redirect_to project_path(project) unless request.xhr?
+    end
 
     tracks = TimeTrack.project_tracks(project)
     @project_form = build(project, track: time_track, tracks: tracks)
 
-    render 'projects/show', change: 'track-form'
+    if request.xhr?
+      return render json: @project_form, status: time_track.valid? ? :ok : :unprocessable_entity
+    end
+
+    render 'projects/show'
   end
 
   private
