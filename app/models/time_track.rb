@@ -1,4 +1,6 @@
 class TimeTrack < ActiveRecord::Base
+  attribute :time_in_minutes, :time_to_minutes
+
   belongs_to :task
 
   validates :task_id, :time_in_minutes, :date, presence: true
@@ -6,18 +8,6 @@ class TimeTrack < ActiveRecord::Base
     greater_than: 0,
     less_than_or_equal_to: 1440
   }
-
-  def time
-    if self.time_in_minutes.present? && self.time_in_minutes > 0
-      self.time_in_minutes / 60
-    else
-      0
-    end
-  end
-
-  def time=(value)
-    self.time_in_minutes = value * 60
-  end
 
   scope :project_tracks, ->(project) {
     order(date: :desc).includes(task: :project)
