@@ -10,7 +10,8 @@ class TimeTrack < ActiveRecord::Base
   }
 
   scope :project_tracks, ->(project) {
-    order(date: :desc).includes(task: :project)
+    order(date: :desc).order(id: :desc)
+      .includes(task: :project)
       .where('tasks.project_id' => project.id)
   }
 end

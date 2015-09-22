@@ -13,3 +13,4 @@ es:
   time_tracks:
     time_track:
       time_in_hours: '%{hours} hrs'
+      time_in_minutes: '%{minutes} mins'

@@ -1,5 +1,7 @@
 <tr>
   <td><%= time_track.task.name %></td>
   <td><%= l(time_track.date, format: :no_time) %></td>
-  <td><%= t('.time_in_hours', hours: time_track.time_in_minutes / 60.0) %></td>
+  <td>
+    <%= minutes_to_human(time_track.time_in_minutes) %>
+  </td>
 </tr>
